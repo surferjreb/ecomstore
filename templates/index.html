@@ -6,14 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="picnic.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/picnic.min.css">
   </head>
   {% endblock %}
   <body>
-    {% block body %}
-      <p>{{ message }}</p>
+    {% include "navbar.html" %}
+    {% block content %}
+      <div style="overflow: hidden">
+        <p>Stuff here too</p>
+        <p>Table showing products</p>
+        <p>{{ message }}</p>
+      </div>
     {% endblock %}
     <!-- <script src="index.js"></script> -->
   </body>
+  <footer>
+    {% block footer %}
+      <a href="https://www.flaticon.com/free-icons/groceries" title="groceries icons">Groceries icons created by Radhe Icon - Flaticon</a>
+    {% endblock%}
+  </footer>
 </html>
