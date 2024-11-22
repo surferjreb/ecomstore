@@ -7,9 +7,9 @@
         <table class="primary">
             <thead>
               <tr>
-                <th>Product</th>
+                <!-- <th>Product</th>
                 <th>Image</th>
-                <th>Price</th>
+                <th>Price</th> -->
               </tr>
             </thead>
             <tbody>
@@ -17,8 +17,8 @@
                 <tr>
                   <td>{{ items.get(item)[0] }}</td>
                   <td><img class=table-img src={{ items.get(item)[2] }}></td>
-                  <td>{{ items.get(item)[1] }}</td>
-                  <td><a href=# >Add to cart</a></td>
+                  <td>$ {{ '{:.2f}'.format(items.get(item)[1]/100) }}</td>
+                  <td><a href=/cart/add-item/{{ (item, items.get(item)) }} >Add to cart</a></td>
                 </tr>
               {% endfor %}
 
